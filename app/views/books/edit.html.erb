@@ -9,11 +9,12 @@
   　    <ul>
         <% @book.errors.full_messages.each do |message| %>
          <li><%= message %></li>
+
         <% end %>
+
        </ul>
+
   <% end %>
-
-
 
 <%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
 
@@ -22,12 +23,13 @@
 
   <label for="book_body">Title</label>
    <%= f.text_area :body %>
+
   <div class="actions">
    <%= f.submit 'Update Book' %>
   </div>
 
-
 <% end %>
+
   <%= link_to "show", book_path(@book.id) %>
     |
   <%= link_to "back", '/books' %>
